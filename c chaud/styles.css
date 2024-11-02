@@ -505,81 +505,89 @@ body {
 }
 /* Find your existing media query and add these new styles inside it */
 @media (max-width: 768px) {
-    /* Keep your existing styles */
+    /* Navigation */
     .nav-links {
         display: none;
     }
     
-    .hero h1 {
+    /* Textes */
+    .tired-text {
         font-size: 2.5rem;
     }
+    
+    .tired-message {
+        font-size: 2.5rem;
+    }
+    
+    .tired-icon {
+        height: 2.5rem;
+    }
+    
+    .tired-container {
+        padding: 10px 20px;
+        gap: 10px;
+    }
 
-    .disclaimer-text p {
-        font-size: 1rem;
+    /* Frames */
+    .title-frame {
+        max-width: 90%;
+        padding: 2px;
     }
     
-    .disclaimer-text {
-        margin-top: 30px;
+    .title-frame .frame-content {
+        padding: 15px 20px;
     }
     
-    .info-container {
-        grid-template-columns: 1fr;
+    .frame-container {
+        margin-top: 80px;
+    }
+    
+    .stylish-frame {
+        width: 85%;
+        padding: 2px;
+    }
+    
+    .stylish-frame .frame-content {
+        padding: 15px 20px;
+    }
+    
+    .frame-text {
+        font-size: 1.1rem;
+        line-height: 1.3;
     }
 
-    /* Add these new styles */
-    .tired-text {
-        font-size: 3rem; /* Réduit de 5rem à 3rem */
-    }
-    
-    /* Ajuste la position des GIFs pour éviter le chevauchement */
+    /* GIFs */
     .hero-gif {
         width: 80px;
         height: 80px;
     }
-    
+
     .left-gif {
         top: 10px;
         left: 10px;
     }
-    
+
     .right-gif {
         top: 10px;
         right: 10px;
     }
-    
-    .bottom-left-gif {
-        width: 80px;
-        height: 80px;
-        bottom: 100px; /* Augmente pour éviter le chevauchement avec les boutons */
-        left: 10px;
-    }
-    
+
+    .bottom-left-gif,
     .bottom-right-gif {
         width: 80px;
         height: 80px;
-        bottom: 100px; /* Augmente pour éviter le chevauchement avec les boutons */
+        bottom: 100px;
+    }
+
+    .bottom-left-gif {
+        left: 10px;
+    }
+
+    .bottom-right-gif {
         right: 10px;
     }
-  
 
-    .tired-text {
-        font-size: 3.5rem;
-    }
-
-    .tired-message {
-        font-size: 2.5rem;
-    }
-
-    .tired-icon {
-        height: 3.5rem;
-    }
-    
-    .tired-container {
-        padding: 15px 25px;
-    }
-
-   
-
+    /* Boutons */
     .custom-btn img {
         width: 50px;
         height: 50px;
@@ -588,35 +596,26 @@ body {
     .custom-buttons {
         gap: 25px;
         bottom: 30px;
-}
-.frame-text {
-    font-size: 1.2rem;
-}
+    }
 
-.stylish-frame {
-    width: 85%;
-}
-.section-title {
-    font-size: 2.5rem;
-}
+    /* Sections */
+    .section-title {
+        font-size: 2.5rem;
+    }
 
-.section-frame {
-    width: 95%;
-}
+    .section-frame {
+        width: 95%;
+    }
 
-.about-text p, .tokenomics-text p {
-    font-size: 1.4rem;
-    margin: 10px 0;
-}
+    .about-text p, 
+    .tokenomics-text p {
+        font-size: 1.4rem;
+        margin: 10px 0;
+    }
 
-.content-frame .frame-content {
-    padding: 20px;
-}
-.frame-container {
-    margin-top: 120px; /* Plus d'espace en haut */
-    margin-bottom: 120px; /* Plus d'espace en bas */
-}
-
+    .content-frame .frame-content {
+        padding: 20px;
+    }
 }
 
 h2 {
