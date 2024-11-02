@@ -20,31 +20,6 @@ body {
 /* Hero Section */
 
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    filter: blur(8px);
-    z-index: 0;
-}
-.hero {
-    height: 100vh;
-    min-height: 1000px;
-    position: relative;
-    overflow: hidden; /* Pour éviter tout débordement */
-}
-
-.hero-content {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
 
 .hero-gif {
     position: absolute;
@@ -86,14 +61,56 @@ body {
 /* Center the main content */
 
 /* Position buttons at bottom */
+.hero {
+    height: 120vh; /* Retour à 120vh comme avant */
+    min-height: 1000px;
+    background: url('bob1.gif');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: visible; /* Change overflow à visible */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(8px);
+    z-index: 0;
+}
+
+/* Mise à jour des boutons */
 .custom-buttons {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     justify-content: center;
-    margin-top: auto;
-    margin-bottom: 50px;  /* Space from bottom */
-    width: 100%;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
 }
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
@@ -170,12 +187,11 @@ body {
     display: flex;
     gap: 40px;
     justify-content: center;
-    position: absolute;
-    bottom: 20px; /* Ajuste cette valeur si nécessaire */
+    position: absolute; /* Changed to absolute positioning */
+    bottom: 40px; /* Distance from bottom */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
-    margin-bottom: 20px; /* Espace du bas */
 }
 
 .custom-btn img {
@@ -511,20 +527,40 @@ body {
     }
 
     /* Add these new styles */
-    .hero-gif {
-        width: 100px;
-        height: 100px;
+    .tired-text {
+        font-size: 3rem; /* Réduit de 5rem à 3rem */
     }
-
+    
+    /* Ajuste la position des GIFs pour éviter le chevauchement */
+    .hero-gif {
+        width: 80px;
+        height: 80px;
+    }
+    
     .left-gif {
         top: 10px;
         left: 10px;
     }
-
+    
     .right-gif {
         top: 10px;
         right: 10px;
     }
+    
+    .bottom-left-gif {
+        width: 80px;
+        height: 80px;
+        bottom: 100px; /* Augmente pour éviter le chevauchement avec les boutons */
+        left: 10px;
+    }
+    
+    .bottom-right-gif {
+        width: 80px;
+        height: 80px;
+        bottom: 100px; /* Augmente pour éviter le chevauchement avec les boutons */
+        right: 10px;
+    }
+  
 
     .tired-text {
         font-size: 3.5rem;
@@ -542,23 +578,19 @@ body {
         padding: 15px 25px;
     }
 
-    .bottom-left-gif,
-    .bottom-right-gif {
-        width: 100px;
-        height: 100px;
-    }
+   
 
     .custom-btn img {
         width: 50px;
         height: 50px;
     }
     
- .custom-buttons {
-        bottom: 10px;
-        gap: 20px;
-    }
+    .custom-buttons {
+        gap: 25px;
+        bottom: 30px;
+}
 .frame-text {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 .stylish-frame {
@@ -580,6 +612,11 @@ body {
 .content-frame .frame-content {
     padding: 20px;
 }
+.frame-container {
+    margin-top: 120px; /* Plus d'espace en haut */
+    margin-bottom: 120px; /* Plus d'espace en bas */
+}
+
 }
 
 h2 {
