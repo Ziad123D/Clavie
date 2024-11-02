@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+
+
+/* Hero Section */
+.hero {
+    height: 120vh;
+    min-height: 1000px;
+    background: url('bob1.gif');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(8px);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-gif {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.left-gif {
+    top: 20px;
+    left: 20px;
+}
+
+.right-gif {
+    top: 20px;
+    right: 20px;
+}
+
+.bottom-left-gif {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    bottom: 20px;
+    left: 20px;
+}
+
+.bottom-right-gif {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    bottom: 20px;
+    right: 20px;
+}
+/* Center the main content */
+
+/* Position buttons at bottom */
+.custom-buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: 50px;  /* Space from bottom */
+    width: 100%;
+}
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    background: white;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Add these new styles after your hero section styles */
+
+
+/* Update these styles in your CSS */
+.hero-text {
+    text-align: center;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+.tired-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 40px; /* Add padding inside the frame */
+}
+
+.tired-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1;
+}
+
+.tired-icon {
+    height: 5rem;
+    width: auto;
+    margin-bottom: 5px;
+    object-fit: contain;
+}
+
+
+/* Remove or comment out these styles since we're not using them anymore */
+/*
+.tired-message {
+    ...
+}
+*/
+/* Make the farmers text bigger */
+.tired-message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem; /* Increased from 1.8rem */
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+.custom-buttons {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    position: absolute; /* Changed to absolute positioning */
+    bottom: 40px; /* Distance from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.custom-btn img {
+    width: 60px; /* Much smaller */
+    height: 60px; /* Equal width and height for circle */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.custom-btn:hover {
+    transform: translateY(-5px);
+}
+
+
+.custom-btn {
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+
+.frame-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* This will center it vertically */
+    margin-top: 100px;
+}
+
+.stylish-frame {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 3px; /* This creates space for the inner border */
+    border-radius: 15px;
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+}
+
+.stylish-frame::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.frame-content {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 30px 40px;
+}
+
+/* Update the frame text style */
+.stylish-frame .frame-content .frame-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.4;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Sections */
+.section-light {
+    min-height: 120vh;
+    background: url('bob2.gif');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.section-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(8px);
+    z-index: 0;
+}
+
+.section-dark {
+    min-height: 120vh;
+    background: url('bob3.gif');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.section-dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(8px);
+    z-index: 0;
+}
+
+.section-content {
+    background: transparent; /* Remove the white background */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.section-frame {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 3px;
+    border-radius: 15px;
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    margin: 30px auto;
+}
+
+.section-frame::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 20px 0;
+}
+
+.content-frame {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.content-frame .frame-content {
+    padding: 30px;
+}
+
+.about-text p, 
+.tokenomics-text p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.4;
+    margin: 15px 0;
+}
+
+.disclaimer-text {
+    font-family: 'Playfair Display', serif;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.disclaimer-text p {
+    font-size: 1.2rem;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    color: white;
+    margin: 0;
+}
+
+
+
+
+
+.title-frame {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 3px;
+    border-radius: 15px;
+    position: relative;
+    max-width: 800px; /* Adjust based on your needs */
+    margin: 0 auto;
+}
+
+.title-frame::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+
+
+
+/* Cards */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Info Section */
+.info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Contact Section */
+.contact-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+.contract-address {
+    color: white;
+    font-family: monospace;
+    font-size: 14px;
+    opacity: 0.8;
+}
+/* Find your existing media query and add these new styles inside it */
+@media (max-width: 768px) {
+    /* Keep your existing styles */
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .disclaimer-text p {
+        font-size: 1rem;
+    }
+    
+    .disclaimer-text {
+        margin-top: 30px;
+    }
+    
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Add these new styles */
+    .hero-gif {
+        width: 100px;
+        height: 100px;
+    }
+
+    .left-gif {
+        top: 10px;
+        left: 10px;
+    }
+
+    .right-gif {
+        top: 10px;
+        right: 10px;
+    }
+
+    .tired-text {
+        font-size: 3.5rem;
+    }
+
+    .tired-message {
+        font-size: 2.5rem;
+    }
+
+    .tired-icon {
+        height: 3.5rem;
+    }
+    
+    .tired-container {
+        padding: 15px 25px;
+    }
+
+    .bottom-left-gif,
+    .bottom-right-gif {
+        width: 100px;
+        height: 100px;
+    }
+
+    .custom-btn img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .custom-buttons {
+        gap: 25px;
+        bottom: 30px;
+}
+.frame-text {
+    font-size: 1.4rem;
+}
+
+.stylish-frame {
+    width: 85%;
+}
+.section-title {
+    font-size: 2.5rem;
+}
+
+.section-frame {
+    width: 95%;
+}
+
+.about-text p, .tokenomics-text p {
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+
+.content-frame .frame-content {
+    padding: 20px;
+}
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+h3 {
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #666;
+    margin-bottom: 1rem;
+}
