@@ -106,7 +106,7 @@ section {
     margin: 15px 0;
 }
 .tired-icon {
-    height: 3.6rem; /* Ajusté pour correspondre à la taille du texte */
+    height: 5rem; /* Ajusté pour correspondre à la taille du texte */
     width: auto;
     object-fit: contain;
     margin: 0; /* Enlève la marge du bas */
