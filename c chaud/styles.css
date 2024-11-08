@@ -106,7 +106,7 @@ section {
     margin: 15px 0;
 }
 .tired-icon {
-    height: 1.8rem; /* Ajusté pour correspondre à la taille du texte */
+    height: 3.6rem; /* Ajusté pour correspondre à la taille du texte */
     width: auto;
     object-fit: contain;
     margin: 0; /* Enlève la marge du bas */
@@ -264,6 +264,15 @@ section {
     margin: 0;
 }
 
+.stylish-frame .frame-content .frame-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.4;
+    margin: 15px 0;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .tired-text {
@@ -271,7 +280,7 @@ section {
     }
     
     .tired-icon {
-        height: 1.4rem;
+        height: 2.6rem;
     }
     
     .tired-container {
@@ -280,8 +289,8 @@ section {
     }
 
     .hero-gif {
-        width: 80px;
-        height: 80px;
+        width: 200px;
+        height: 200px;
     }
 
     .left-gif {
