@@ -9,10 +9,44 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffd700;
 }
 
 section {
@@ -27,7 +61,6 @@ section {
     min-height: 1000px;
     position: relative;
     overflow: visible;
-    background-image: url('bob1.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -74,94 +107,15 @@ section {
     right: 20px;
 }
 
-/* Hero Text and Frame Styles */
-.hero-text {
-    text-align: center;
-    margin-top: 50px;
-    padding: 0 20px;
-    position: relative;
-    z-index: 3;
-}
-
-.tired-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px 40px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-}
-
-
-.tired-text {
-    font-family: 'Playfair Display', serif; /* Même police que les autres textes */
-    font-size: 1.8rem;
+/* Main Title Style */
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
     color: white;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    line-height: 1.4;
-    margin: 15px 0;
-}
-.tired-icon {
-    height: 5rem; /* Ajusté pour correspondre à la taille du texte */
-    width: auto;
-    object-fit: contain;
-    margin: 0; /* Enlève la marge du bas */
-}
-
-
-/* Frame Styles */
-.frame-container {
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    margin-top: 100px;
-}
-
-.stylish-frame, .title-frame, .section-frame {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    padding: 3px;
-    border-radius: 15px;
-    position: relative;
-}
-
-.stylish-frame {
-    max-width: 600px;
-    width: 90%;
-}
-
-.title-frame {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.stylish-frame::before,
-.title-frame::before,
-.section-frame::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    z-index: -1;
-}
-
-.frame-content {
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 12px;
-    padding: 30px 40px;
+    margin-top: 40vh;
+    transform: translateY(-50%);
 }
 
 /* Button Styles */
@@ -204,20 +158,39 @@ section {
     background-repeat: no-repeat;
 }
 
-.section-light {
-    background-image: url('bob2.gif');
-}
-
-.section-dark {
-    background-image: url('bob3.gif');
-}
-
 .section-content {
     position: relative;
     z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px 20px;
+}
+
+.section-frame {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 3px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.section-frame::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.frame-content {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 30px 40px;
 }
 
 .section-title {
@@ -264,33 +237,16 @@ section {
     margin: 0;
 }
 
-.stylish-frame .frame-content .frame-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: white;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    line-height: 1.4;
-    margin: 15px 0;
-}
 /* Responsive Design */
 @media (max-width: 768px) {
-    .tired-text {
-        font-size: 1.4rem;
-    }
-    
-    .tired-icon {
-        height: 2.6rem;
-    }
-    
-    .tired-container {
-        padding: 10px 20px;
-        gap: 10px;
+    .main-title {
+        font-size: 2.5rem;
+        margin-top: 30vh;
     }
 
     .hero-gif {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
     }
 
     .left-gif {
@@ -339,5 +295,9 @@ section {
 
     .frame-content {
         padding: 15px 20px;
+    }
+
+    .navbar a {
+        font-size: 1rem;
     }
 }
