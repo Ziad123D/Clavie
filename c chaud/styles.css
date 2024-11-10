@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap');
 
 * {
     margin: 0;
@@ -14,7 +11,7 @@ html {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -23,30 +20,44 @@ body {
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 20px 0;
+    background: transparent;
 }
 
-.navbar ul {
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-links {
     display: flex;
     justify-content: center;
-    list-style: none;
-    gap: 2rem;
+    gap: 40px;
 }
 
-.navbar a {
+.nav-link {
     color: white;
     text-decoration: none;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 8px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
 }
 
-.navbar a:hover {
-    color: #ffd700;
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
 }
 
 section {
@@ -109,13 +120,19 @@ section {
 
 /* Main Title Style */
 .main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
     color: white;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin-top: 40vh;
-    transform: translateY(-50%);
+    letter-spacing: 4px;
+    line-height: 1.2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
 }
 
 /* Button Styles */
@@ -211,7 +228,7 @@ section {
 
 .about-text p, 
 .tokenomics-text p {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
     color: white;
     text-align: center;
@@ -221,7 +238,7 @@ section {
 }
 
 .disclaimer-text {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
     text-align: center;
     margin-top: 50px;
@@ -240,8 +257,17 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
     .main-title {
-        font-size: 2.5rem;
-        margin-top: 30vh;
+        font-size: 3rem;
+        letter-spacing: 2px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 6px 12px;
     }
 
     .hero-gif {
@@ -295,9 +321,5 @@ section {
 
     .frame-content {
         padding: 15px 20px;
-    }
-
-    .navbar a {
-        font-size: 1rem;
     }
 }
