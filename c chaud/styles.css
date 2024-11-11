@@ -100,10 +100,9 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 120vh;
-    min-height: 1000px;
+    height: 100vh;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -215,13 +214,13 @@ body {
 
 /* Section Styles */
 .section-light, .section-dark {
-    min-height: 120vh;
+    min-height: 100vh;
     position: relative;
     z-index: 1;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .section-content {
@@ -273,7 +272,7 @@ body {
 .content-frame {
     margin-top: 50px;
     padding: 40px;
-    min-height: 400px;
+    min-height: auto;
 }
 
 .about-text p, 
@@ -313,6 +312,16 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+        padding-bottom: 100px;
+    }
+
+    .section-light, .section-dark {
+        min-height: auto;
+        padding: 60px 0;
+    }
+
     .main-title {
         font-size: 2.5rem;
         letter-spacing: 2px;
@@ -327,6 +336,7 @@ body {
 
     .hero-text {
         left: 51%;
+        top: 45%;
     }
 
     .nav-links {
@@ -396,11 +406,25 @@ body {
     }
 
     .frame-content {
-        padding: 30px 20px;
+        padding: 20px 15px;
+    }
+
+    .section-content {
+        padding: 20px 15px;
+    }
+
+    .content-frame {
+        margin-top: 30px;
+        padding: 20px;
     }
 }
 
 @media (max-width: 480px) {
+    .hero {
+        height: 100vh;
+        padding-bottom: 80px;
+    }
+
     .nav-links {
         gap: 15px;
     }
@@ -409,13 +433,18 @@ body {
         font-size: 0.6rem;
     }
 
+    .section-content {
+        padding: 15px 10px;
+    }
+
     .frame-content {
-        padding: 20px 15px;
+        padding: 15px 10px;
     }
 
     .about-text p, 
     .tokenomics-text p {
         font-size: 0.9rem;
+        margin: 20px 0;
     }
 
     .about-text p:first-child,
