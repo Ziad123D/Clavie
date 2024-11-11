@@ -7,14 +7,24 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: -webkit-fill-available;
 }
 
 /* Navbar Styles */
@@ -100,12 +110,14 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     position: relative;
     overflow: hidden;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .hero-content {
@@ -118,6 +130,7 @@ body {
     padding: 2rem;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .hero-text {
@@ -215,11 +228,13 @@ body {
 /* Section Styles */
 .section-light, .section-dark {
     min-height: 100vh;
+    height: auto;
     position: relative;
     z-index: 1;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     padding: 80px 0;
 }
 
@@ -312,14 +327,30 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero {
-        height: 100vh;
-        padding-bottom: 100px;
+    .hero, .section-light, .section-dark {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        background-attachment: scroll;
+        background-size: auto 100%;
+        background-position: center;
     }
 
-    .section-light, .section-dark {
-        min-height: auto;
-        padding: 60px 0;
+    .hero {
+        background-image: url('bob1.gif') !important;
+    }
+
+    .section-light {
+        background-image: url('bob2.gif') !important;
+    }
+
+    .section-dark {
+        background-image: url('bob3.gif') !important;
+    }
+
+    .hero-content {
+        min-height: 100vh;
+        height: auto;
+        padding-bottom: 120px;
     }
 
     .main-title {
@@ -420,6 +451,11 @@ body {
 }
 
 @media (max-width: 480px) {
+    .hero, .section-light, .section-dark {
+        background-size: cover;
+        background-position: center;
+    }
+
     .hero {
         height: 100vh;
         padding-bottom: 80px;
@@ -450,5 +486,9 @@ body {
     .about-text p:first-child,
     .about-text p:nth-child(3) {
         font-size: 1.1rem;
+    }
+
+    .disclaimer-text p {
+        font-size: 0.8rem;
     }
 }
