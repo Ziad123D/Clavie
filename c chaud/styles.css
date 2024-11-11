@@ -5,30 +5,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
 }
 
-html, body {
-    position: relative;
-    overflow-x: hidden !important;
+html {
+    overflow-x: hidden;
     width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
+    position: relative;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 .page-wrapper {
+    width: 100%;
     position: relative;
-    width: 100vw;
     overflow-x: hidden;
-    margin: 0;
-    padding: 0;
+}
+
+section {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
 }
 
 /* Navbar Styles */
@@ -114,14 +116,27 @@ body {
 
 /* Hero Section */
 .hero {
-    position: relative;
-    width: 100vw;
     min-height: 100vh;
-    overflow-x: hidden;
+    background-image: url('bob1.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    left: 0;
+}
+
+.section-light {
+    min-height: 100vh;
+    background-image: url('bob2.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.section-dark {
+    min-height: 100vh;
+    background-image: url('bob3.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -230,18 +245,6 @@ body {
 }
 
 /* Section Styles */
-.section-light, .section-dark {
-    position: relative;
-    width: 100vw;
-    min-height: 100vh;
-    overflow-x: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    left: 0;
-    padding: 80px 0;
-}
-
 .section-content {
     position: relative;
     z-index: 2;
@@ -329,24 +332,15 @@ body {
     margin: 0;
 }
 
-/* Responsive Design */
+/* Media Queries */
 @media (max-width: 768px) {
     html, body, .page-wrapper {
-        width: 100vw;
-        overflow-x: hidden !important;
-        position: relative;
-        left: 0;
-        right: 0;
+        width: 100%;
+        overflow-x: hidden;
     }
 
-    .hero, .section-light, .section-dark {
-        width: 100vw;
-        overflow-x: hidden;
-        position: relative;
-        left: 0;
+    section {
         background-attachment: scroll;
-        background-size: cover;
-        background-position: center;
     }
 
     .hero-content {
