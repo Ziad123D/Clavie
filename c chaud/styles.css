@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-@viewport {
-    width: device-width;
-    zoom: 1.0;
-}
-
-@-ms-viewport {
-    width: device-width;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -17,25 +8,27 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-html {
-    scroll-behavior: smooth;
-    height: 100%;
+html, body {
+    position: relative;
+    overflow-x: hidden !important;
     width: 100%;
-    overflow-x: hidden;
-    -webkit-text-size-adjust: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     min-height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
+}
+
+.page-wrapper {
     position: relative;
+    width: 100vw;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
-    touch-action: manipulation;
-    -webkit-overflow-scrolling: touch;
 }
 
 /* Navbar Styles */
@@ -121,19 +114,14 @@ body {
 
 /* Hero Section */
 .hero {
-    width: 100%;
-    min-height: 100vh;
     position: relative;
-    overflow: hidden;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     left: 0;
-    right: 0;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
 }
 
 .hero-content {
@@ -243,20 +231,15 @@ body {
 
 /* Section Styles */
 .section-light, .section-dark {
-    width: 100%;
-    min-height: 100vh;
     position: relative;
-    overflow: hidden;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     left: 0;
-    right: 0;
     padding: 80px 0;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
 }
 
 .section-content {
@@ -270,12 +253,9 @@ body {
 
 .section-frame {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    padding: 3px;
     border-radius: 15px;
     position: relative;
-    width: 100%;
+    padding: 1px;
 }
 
 .section-frame::before {
@@ -306,7 +286,6 @@ body {
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     padding: 20px 0;
-    word-wrap: break-word;
 }
 
 .content-frame {
@@ -324,7 +303,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     line-height: 1.8;
     margin: 30px 0;
-    word-wrap: break-word;
 }
 
 .about-text p:first-child,
@@ -349,41 +327,26 @@ body {
     font-style: italic;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     margin: 0;
-    word-wrap: break-word;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    body {
-        touch-action: pan-y pinch-zoom;
+    html, body, .page-wrapper {
+        width: 100vw;
+        overflow-x: hidden !important;
+        position: relative;
+        left: 0;
+        right: 0;
     }
 
     .hero, .section-light, .section-dark {
-        min-height: 100vh;
-        min-height: -webkit-fill-available;
+        width: 100vw;
+        overflow-x: hidden;
+        position: relative;
+        left: 0;
         background-attachment: scroll;
         background-size: cover;
         background-position: center;
-        width: 100%;
-        left: 0;
-        right: 0;
-        overflow: hidden;
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
-
-    .hero {
-        background-image: url('bob1.gif') !important;
-    }
-
-    .section-light {
-        background-image: url('bob2.gif') !important;
-    }
-
-    .section-dark {
-        background-image: url('bob3.gif') !important;
     }
 
     .hero-content {
@@ -391,7 +354,6 @@ body {
         height: auto;
         padding: 1rem;
         padding-bottom: 120px;
-        width: 100%;
     }
 
     .main-title {
@@ -485,30 +447,15 @@ body {
 
     .section-content {
         padding: 15px 10px;
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
     }
 
     .content-frame {
         margin-top: 30px;
         padding: 15px;
     }
-
-    .section-frame::before {
-        top: -5px;
-        left: -5px;
-        right: -5px;
-        bottom: -5px;
-    }
 }
 
 @media (max-width: 480px) {
-    .hero, .section-light, .section-dark {
-        background-size: cover;
-        background-position: center;
-    }
-
     .hero {
         height: 100vh;
         padding-bottom: 80px;
@@ -544,7 +491,6 @@ body {
 
     .disclaimer-text p {
         font-size: 0.7rem;
-        padding: 0 5px;
     }
 
     .section-title {
