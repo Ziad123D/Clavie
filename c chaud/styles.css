@@ -1,32 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
-html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    position: relative;
+html {
+    scroll-behavior: smooth;
     height: 100%;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     min-height: 100vh;
-    min-height: -webkit-fill-available;
-}
-
-html {
-    scroll-behavior: smooth;
-    height: -webkit-fill-available;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Navbar Styles */
@@ -112,14 +121,19 @@ html {
 
 /* Hero Section */
 .hero {
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     position: relative;
     overflow: hidden;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    left: 0;
+    right: 0;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .hero-content {
@@ -229,16 +243,20 @@ html {
 
 /* Section Styles */
 .section-light, .section-dark {
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     position: relative;
-    z-index: 1;
+    overflow: hidden;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    left: 0;
+    right: 0;
     padding: 80px 0;
-    overflow: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .section-content {
@@ -336,6 +354,10 @@ html {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        touch-action: pan-y pinch-zoom;
+    }
+
     .hero, .section-light, .section-dark {
         min-height: 100vh;
         min-height: -webkit-fill-available;
@@ -343,9 +365,13 @@ html {
         background-size: cover;
         background-position: center;
         width: 100%;
-        max-width: 100vw;
         left: 0;
         right: 0;
+        overflow: hidden;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
     }
 
     .hero {
@@ -459,6 +485,9 @@ html {
 
     .section-content {
         padding: 15px 10px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     .content-frame {
