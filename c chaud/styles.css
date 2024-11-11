@@ -221,12 +221,13 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 100px 0;
 }
 
 .section-content {
     position: relative;
     z-index: 2;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 50px 20px;
 }
@@ -255,7 +256,7 @@ body {
 .frame-content {
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 12px;
-    padding: 30px 40px;
+    padding: 60px 80px;
 }
 
 .section-title {
@@ -271,18 +272,26 @@ body {
 
 .content-frame {
     margin-top: 50px;
-    padding: 20px;
+    padding: 40px;
+    min-height: 400px;
 }
 
 .about-text p, 
 .tokenomics-text p {
     font-family: 'Press Start 2P', cursive;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     color: white;
-    text-align: center;
+    text-align: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    line-height: 1.4;
-    margin: 15px 0;
+    line-height: 1.8;
+    margin: 30px 0;
+}
+
+.about-text p:first-child,
+.about-text p:nth-child(3) {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 20px;
 }
 
 .disclaimer-text {
@@ -373,16 +382,21 @@ body {
     }
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .about-text p, 
     .tokenomics-text p {
-        font-size: 1.4rem;
+        font-size: 1rem;
+    }
+
+    .about-text p:first-child,
+    .about-text p:nth-child(3) {
+        font-size: 1.2rem;
     }
 
     .frame-content {
-        padding: 15px 20px;
+        padding: 30px 20px;
     }
 }
 
@@ -393,5 +407,19 @@ body {
 
     .nav-link {
         font-size: 0.6rem;
+    }
+
+    .frame-content {
+        padding: 20px 15px;
+    }
+
+    .about-text p, 
+    .tokenomics-text p {
+        font-size: 0.9rem;
+    }
+
+    .about-text p:first-child,
+    .about-text p:nth-child(3) {
+        font-size: 1.1rem;
     }
 }
