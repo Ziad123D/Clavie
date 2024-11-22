@@ -310,6 +310,8 @@ section {
     padding: 20px;
     position: relative;
     z-index: 2;
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    font-size: 0.9rem; /* Ajustez la taille de la police ici */
 }
 
 .disclaimer-text p {
