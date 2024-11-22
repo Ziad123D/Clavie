@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -115,9 +116,10 @@ section {
 }
 
 /* Hero Section */
-.hero, .section-light, .section-dark {
+.hero {
     min-height: 100vh;
-    background-size: 100% 100%;
+    background-image: url('bob1.gif');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -158,10 +160,10 @@ section {
 }
 
 .subtitle {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    text-shadow: none;
     letter-spacing: 2px;
     max-width: 800px;
     margin: 0 auto;
@@ -228,6 +230,15 @@ section {
 }
 
 /* Section Styles */
+.section-light {
+    background-color: #f8f8f8; /* Couleur de fond claire pour les sections */
+}
+
+.section-dark {
+    background-color: #000; /* Fond noir */
+    color: #ffffff; /* Texte en blanc */
+}
+
 .section-content {
     position: relative;
     z-index: 2;
@@ -238,56 +249,42 @@ section {
 }
 
 .section-frame {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
     position: relative;
     padding: 1px;
-}
-
-.section-frame::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    z-index: -1;
 }
 
 .frame-content {
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 12px;
-    padding: 60px 80px;
-    width: 100%;
-    word-break: break-word;
+    padding: 20px; /* Ajustez le padding selon vos besoins */
+}
+
+/* Background for text */
+.text-background {
+    background-color: rgba(0, 0, 0, 0.8); /* Fond noir semi-transparent */
+    border-radius: 15px; /* Coins arrondis */
+    padding: 20px; /* Espacement interne */
+    margin: 20px 0; /* Espacement externe */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre pour un effet élégant */
 }
 
 .section-title {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Roboto', sans-serif; /* Changer la police */
     font-size: 3rem;
-    font-weight: 800;
-    color: white;
+    font-weight: 700; /* Changer le poids si nécessaire */
+    color: #ffd700; /* Couleur de titre */
     text-align: center;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     padding: 20px 0;
-}
-
-.content-frame {
-    margin-top: 50px;
-    padding: 40px;
-    min-height: auto;
 }
 
 .about-text p, 
 .tokenomics-text p {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Roboto', sans-serif; /* Changer la police */
     font-size: 1.2rem;
-    color: white;
+    color: #f0f0f0; /* Couleur plus claire */
     text-align: left;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: none; /* Supprimer l'ombre si nécessaire */
     line-height: 1.8;
     margin: 30px 0;
     word-wrap: break-word;
