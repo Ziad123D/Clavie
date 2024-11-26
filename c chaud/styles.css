@@ -237,7 +237,7 @@ section {
 
 .section-dark {
     background-color: #000; /* Black background */
-    color: white; /* Text in white */
+    color: #ffffff; /* White text */
 }
 
 .section-content {
@@ -262,7 +262,7 @@ section {
 
 /* Background for text */
 .text-background {
-    background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
     border-radius: 15px; /* Rounded corners */
     padding: 20px; /* Internal spacing */
     margin: 20px 0; /* External spacing */
@@ -270,10 +270,10 @@ section {
 }
 
 .section-title {
-    font-family: 'Hepta Slab', serif; /* Use Hepta Slab for clarity */
+    font-family: 'Hepta Slab', serif; /* Using Hepta Slab for titles */
     font-size: 3rem;
     font-weight: 700; /* Strong weight */
-    color: white; /* Changed to white */
+    color: #ffd700; /* Title color */
     text-align: center;
     margin: 0;
     padding: 20px 0;
@@ -281,24 +281,26 @@ section {
 
 .about-text p, 
 .tokenomics-text p {
-    font-family: 'Hepta Slab', serif; /* Use Hepta Slab for body text */
+    font-family: 'Hepta Slab', serif; /* Using Hepta Slab for body text */
     font-size: 1.2rem;
     color: white; /* Changed to white */
     text-align: left;
-    line-height: 1.8; /* Line height for better readability */
-    margin: 30px 0; /* Spacing between paragraphs */
-    word-wrap: break-word; /* Handle long words */
-    overflow-wrap: break-word; /* Handle overflow */
-    hyphens: auto; /* Hyphenation for better text flow */
+    text-shadow: none; /* Removed shadow for clarity */
+    line-height: 1.8;
+    margin: 30px 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .about-text p:first-child,
 .about-text p:nth-child(3) {
     font-size: 1.5rem;
-    color: #ffd700; /* Keep gold color for emphasis */
+    color: #ffd700; /* Gold color for emphasis */
     margin-bottom: 20px;
 }
 
+/* Disclaimer Text */
 .disclaimer-text {
     font-family: 'Press Start 2P', cursive;
     color: white; /* Changed to white */
@@ -312,10 +314,15 @@ section {
 }
 
 .disclaimer-text p {
-    font-size: 1.2rem;
-    font-style: italic;
-    text-shadow: none; /* Removed shadow for clarity */
-    margin: 0;
+    margin: 0; /* Remove default margin */
+}
+
+.disclaimer-text .ca {
+    font-size: 0.8rem; /* Smaller size for "CA" */
+}
+
+.disclaimer-text .address {
+    font-size: 0.7rem; /* Even smaller size for the address */
 }
 
 /* Media Queries */
