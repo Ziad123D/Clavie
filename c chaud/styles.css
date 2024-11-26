@@ -231,12 +231,12 @@ section {
 
 /* Section Styles */
 .section-light {
-    background-color: #f8f8f8; /* Couleur de fond claire pour les sections */
+    background-color: #f8f8f8; /* Light background color for sections */
 }
 
 .section-dark {
-    background-color: #000; /* Fond noir */
-    color: #ffffff; /* Texte en blanc */
+    background-color: #000; /* Black background */
+    color: #ffffff; /* White text */
 }
 
 .section-content {
@@ -256,23 +256,23 @@ section {
 .frame-content {
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 12px;
-    padding: 20px; /* Ajustez le padding selon vos besoins */
+    padding: 20px; /* Adjust padding as needed */
 }
 
 /* Background for text */
 .text-background {
-    background-color: rgba(0, 0, 0, 0.8); /* Fond noir semi-transparent */
-    border-radius: 15px; /* Coins arrondis */
-    padding: 20px; /* Espacement interne */
-    margin: 20px 0; /* Espacement externe */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre pour un effet élégant */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Internal spacing */
+    margin: 20px 0; /* External spacing */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for an elegant effect */
 }
 
 .section-title {
-    font-family: 'Roboto', sans-serif; /* Changer la police */
+    font-family: 'Poppins', sans-serif; /* Use Poppins for clarity */
     font-size: 3rem;
-    font-weight: 700; /* Changer le poids si nécessaire */
-    color: #ffd700; /* Couleur de titre */
+    font-weight: 700; /* Change weight if necessary */
+    color: #ffd700; /* Title color */
     text-align: center;
     margin: 0;
     padding: 20px 0;
@@ -280,16 +280,15 @@ section {
 
 .about-text p, 
 .tokenomics-text p {
-    font-family: 'Roboto', sans-serif; /* Changer la police */
+    font-family: 'Roboto', sans-serif; /* Use Roboto for body text */
     font-size: 1.2rem;
-    color: #f0f0f0; /* Couleur plus claire */
+    color: #f0f0f0; /* Lighter color */
     text-align: left;
-    text-shadow: none; /* Supprimer l'ombre si nécessaire */
-    line-height: 1.8;
-    margin: 30px 0;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
+    line-height: 1.8; /* Line height for better readability */
+    margin: 30px 0; /* Spacing between paragraphs */
+    word-wrap: break-word; /* Handle long words */
+    overflow-wrap: break-word; /* Handle overflow */
+    hyphens: auto; /* Hyphenation for better text flow */
 }
 
 .about-text p:first-child,
@@ -307,8 +306,8 @@ section {
     padding: 20px;
     position: relative;
     z-index: 2;
-    white-space: nowrap; /* Empêche le retour à la ligne */
-    font-size: 0.9rem; /* Ajustez la taille de la police ici */
+    white-space: nowrap; /* Prevent line breaks */
+    font-size: 0.9rem; /* Adjust font size here */
 }
 
 .disclaimer-text p {
