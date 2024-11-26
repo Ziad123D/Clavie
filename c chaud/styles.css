@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap'); /* Increased weight */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
@@ -15,12 +16,12 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Using Poppins for clarity */
+    font-family: 'Hepta Slab', serif; /* Using Hepta Slab for clarity */
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
     position: relative;
-    color: black; /* Default text color */
+    color: white; /* Default text color set to white */
 }
 
 .page-wrapper {
@@ -60,7 +61,7 @@ section {
 
 .nav-link {
     position: relative;
-    color: black; /* Changed to black */
+    color: white; /* Changed to white */
     text-decoration: none;
     font-family: 'Press Start 2P', cursive;
     font-size: 0.8rem;
@@ -82,7 +83,7 @@ section {
     left: 50%;
     width: 0;
     height: 2px;
-    background: black; /* Changed to black */
+    background: white; /* Changed to white */
     transform: translateX(-50%);
     transition: width 0.3s ease;
 }
@@ -149,21 +150,20 @@ section {
 }
 
 .main-title {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Hepta Slab', serif; /* Using Hepta Slab for clarity */
     font-size: 4rem;
-    font-weight: 800; /* Keep strong weight */
-    color: black; /* Changed to black */
+    font-weight: 700; /* Strong weight */
+    color: white; /* Changed to white */
     text-shadow: none; /* Removed shadow for clarity */
     letter-spacing: 4px;
     line-height: 1.4;
     margin-bottom: 30px;
-    transform: translateX(30px);
 }
 
 .subtitle {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Hepta Slab', serif; /* Using Hepta Slab for clarity */
     font-size: 1.2rem;
-    color: black; /* Changed to black */
+    color: white; /* Changed to white */
     text-shadow: none; /* Removed shadow for clarity */
     letter-spacing: 2px;
     max-width: 800px;
@@ -237,7 +237,7 @@ section {
 
 .section-dark {
     background-color: #000; /* Black background */
-    color: #ffffff; /* White text */
+    color: white; /* Text in white */
 }
 
 .section-content {
@@ -270,10 +270,10 @@ section {
 }
 
 .section-title {
-    font-family: 'Poppins', sans-serif; /* Use Poppins for clarity */
+    font-family: 'Hepta Slab', serif; /* Use Hepta Slab for clarity */
     font-size: 3rem;
     font-weight: 700; /* Strong weight */
-    color: black; /* Changed to black */
+    color: white; /* Changed to white */
     text-align: center;
     margin: 0;
     padding: 20px 0;
@@ -281,9 +281,9 @@ section {
 
 .about-text p, 
 .tokenomics-text p {
-    font-family: 'Roboto', sans-serif; /* Use Roboto for body text */
+    font-family: 'Hepta Slab', serif; /* Use Hepta Slab for body text */
     font-size: 1.2rem;
-    color: black; /* Changed to black */
+    color: white; /* Changed to white */
     text-align: left;
     line-height: 1.8; /* Line height for better readability */
     margin: 30px 0; /* Spacing between paragraphs */
@@ -301,7 +301,7 @@ section {
 
 .disclaimer-text {
     font-family: 'Press Start 2P', cursive;
-    color: black; /* Changed to black */
+    color: white; /* Changed to white */
     text-align: center;
     margin-top: 50px;
     padding: 20px;
