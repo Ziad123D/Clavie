@@ -554,6 +554,7 @@ body:not(.loaded) {
 
          /* Enhanced Mobile Optimizations */
 /* Complete Mobile Optimizations */
+/* Complete Mobile Optimizations */
 @media (max-width: 768px) {
     /* Navigation */
     .nav {
@@ -593,29 +594,47 @@ body:not(.loaded) {
         margin-top: 20px;
     }
 
+    /* Keep Mickey wheel spinning */
     .mickey-logo {
         width: 90%;
         max-width: 300px;
+        animation: spin 20s linear infinite;
+        transform-origin: center center;
     }
 
     /* Stats Section */
+    .stat-gif {
+        display: none;
+    }
+
     .stats {
         position: relative;
         top: auto;
         transform: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
         padding: 20px;
         margin-top: 30px;
     }
 
-    .stat-gif, .stat-image {
+    .stat-image {
         width: 150px;
         height: 150px;
     }
 
-    /* Buttons */
+    /* Contract and Buttons */
+    .contract {
+        font-size: 14px;
+        padding: 10px;
+        word-break: break-all;
+        width: 90%;
+        margin: 20px auto;
+        background: rgba(255,255,255,0.8);
+        border-radius: 8px;
+        display: block;
+    }
+
     .buttons {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -624,21 +643,14 @@ body:not(.loaded) {
         width: 100%;
         max-width: 400px;
         margin: 20px auto;
+        position: relative;
+        z-index: 2;
     }
 
     .button-image {
         width: 100%;
         max-width: 150px;
         margin: 0 auto;
-    }
-
-    /* Contract */
-    .contract {
-        font-size: 12px;
-        padding: 10px;
-        word-break: break-all;
-        width: 90%;
-        margin: 20px auto;
     }
 
     /* About Section */
@@ -679,12 +691,12 @@ body:not(.loaded) {
         overflow-x: auto;
         padding: 20px 0;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
 
     .buy-steps::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
+        display: none;
     }
 
     .buy-step-img {
@@ -697,6 +709,8 @@ body:not(.loaded) {
     #collection {
         height: auto;
         padding: 40px 15px;
+        margin-bottom: 0;
+        padding-bottom: 20px;
     }
 
     .collection-container {
@@ -721,6 +735,8 @@ body:not(.loaded) {
     #tokenomics {
         height: auto;
         padding: 40px 15px;
+        padding-top: 40px;
+        margin-top: 0;
     }
 
     .tokenomics-container {
@@ -730,7 +746,8 @@ body:not(.loaded) {
 
     .tokenomics-title {
         font-size: 2rem;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+        padding-top: 20px;
     }
 
     .tokenomics-img {
@@ -784,6 +801,11 @@ body:not(.loaded) {
     .about-text {
         font-size: 14px;
     }
+
+    .stat-image {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 /* Landscape Mode */
@@ -802,11 +824,15 @@ body:not(.loaded) {
         gap: 20px;
     }
 
-    .stat-gif, .stat-image {
-        width: 120px;
-        height: 120px;
+    .stat-image {
+        width: 100px;
+        height: 100px;
     }
-}  /* Responsive styles */
+
+    .mickey-logo {
+        max-width: 250px;
+    }
+} /* Responsive styles */
         
     </style>
 </head>
