@@ -555,6 +555,7 @@ body:not(.loaded) {
          /* Enhanced Mobile Optimizations */
 /* Complete Mobile Optimizations */
 /* Complete Mobile Optimizations */
+/* Complete Mobile Optimizations */
 @media (max-width: 768px) {
     /* Navigation */
     .nav {
@@ -578,79 +579,85 @@ body:not(.loaded) {
         padding: 8px 12px;
     }
 
-    /* Main Content */
+    /* First Section Specific */
+    .hero {
+        min-height: 150vh;
+        height: auto;
+        overflow: visible;
+    }
+
     .content {
         padding-top: 120px;
-        padding-left: 15px;
-        padding-right: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Logo and Title */
+    .larp-logo {
+        width: 200px;
     }
 
     .title-container h1 {
         font-size: 2.5rem;
     }
 
-    .larp-logo {
-        width: 200px;
-        margin-top: 20px;
-    }
-
-    /* Keep Mickey wheel spinning */
     .mickey-logo {
         width: 90%;
         max-width: 300px;
         animation: spin 20s linear infinite;
-        transform-origin: center center;
+        margin: 20px 0;
     }
 
     /* Stats Section */
+    .stats {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        margin: 30px 0;
+    }
+
     .stat-gif {
         display: none;
     }
 
-    .stats {
-        position: relative;
-        top: auto;
-        transform: none;
-        flex-direction: row;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px;
-        margin-top: 30px;
-    }
-
     .stat-image {
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 130px;
     }
 
-    /* Contract and Buttons */
+    /* Contract Address */
     .contract {
-        font-size: 14px;
-        padding: 10px;
-        word-break: break-all;
         width: 90%;
-        margin: 20px auto;
-        background: rgba(255,255,255,0.8);
+        font-size: 14px;
+        background: rgba(255,255,255,0.9);
+        padding: 10px;
+        margin: 20px 0;
         border-radius: 8px;
+        text-align: center;
         display: block;
     }
 
+    /* Buttons */
     .buttons {
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
-        padding: 15px;
-        width: 100%;
-        max-width: 400px;
-        margin: 20px auto;
-        position: relative;
-        z-index: 2;
+        padding: 0 15px;
+        margin: 20px 0;
     }
 
     .button-image {
         width: 100%;
-        max-width: 150px;
+        max-width: 140px;
         margin: 0 auto;
+        display: block;
     }
 
     /* About Section */
@@ -780,8 +787,12 @@ body:not(.loaded) {
         font-size: 1rem;
     }
 
+    .stat-image {
+        width: 110px;
+        height: 110px;
+    }
+
     .buttons {
-        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
 
@@ -800,11 +811,6 @@ body:not(.loaded) {
 
     .about-text {
         font-size: 14px;
-    }
-
-    .stat-image {
-        width: 120px;
-        height: 120px;
     }
 }
 
