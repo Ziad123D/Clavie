@@ -549,10 +549,16 @@ body:not(.loaded) {
     }
 }
 
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 
 
 
          /* Enhanced Mobile Optimizations */
+/* Complete Mobile Optimizations */
 /* Complete Mobile Optimizations */
 /* Complete Mobile Optimizations */
 /* Complete Mobile Optimizations */
@@ -629,18 +635,46 @@ body:not(.loaded) {
     .stat-image {
         width: 130px;
         height: 130px;
+        animation: spin 20s linear infinite;
+    }
+
+    .stat-overlay {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #000000;
+        font-size: 1.6rem;
+        font-weight: 900;
+        font-family: 'Arial Black', sans-serif;
+        z-index: 3;
+        width: 100%;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
     }
 
     /* Contract Address */
     .contract {
         width: 90%;
         font-size: 14px;
-        background: rgba(255,255,255,0.9);
+        background: none;
         padding: 10px;
         margin: 20px 0;
-        border-radius: 8px;
         text-align: center;
         display: block;
+        cursor: default;
+        user-select: text;
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+    }
+
+    .contract:hover,
+    .contract:active,
+    .contract:focus {
+        background: none;
+        transform: none;
+        cursor: default;
     }
 
     /* Buttons */
@@ -792,6 +826,10 @@ body:not(.loaded) {
         height: 110px;
     }
 
+    .stat-overlay {
+        font-size: 1.4rem;
+    }
+
     .buttons {
         gap: 10px;
     }
@@ -811,6 +849,10 @@ body:not(.loaded) {
 
     .about-text {
         font-size: 14px;
+    }
+
+    .contract {
+        font-size: 12px;
     }
 }
 
@@ -838,7 +880,7 @@ body:not(.loaded) {
     .mickey-logo {
         max-width: 250px;
     }
-} /* Responsive styles */
+}/* Responsive styles */
         
     </style>
 </head>
