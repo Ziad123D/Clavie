@@ -2,110 +2,1059 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="HandheldFriendly" content="true">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>Mickey on Base</title>
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG $MICKEY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'MickeyFont';
+            src: url('your-font-file.ttf') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #1a1a1a;
+        }
+
+        section {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero {
+            height: 150vh;
+            transition: background 0.3s ease;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero.active {
+            background-image: url('background.gif');
+        }
+
+        /* Navigation styles */
+        .nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        .theme-toggle {
+            height: 40px;
+            width: 40px;
+            cursor: pointer;
+            border-radius: 50%;
+            margin-right: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .nav a {
+            font-family: 'MickeyFont', sans-serif;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 1.5px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.8rem 1rem;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .nav a:hover::before {
+            left: 100%;
+        }
+
+        .nav a:hover {
+            background: #333;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+        }
+
+        /* Content styles */
+        .content {
+            padding-top: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .title-container {
+            margin-bottom: 2rem;
+        }
+
+        .larp-logo {
+            width: 300px;
+            margin-bottom: 0;
+        }
+
+        .title-container h1 {
+            font-family: 'MickeyFont', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-top: -10px;
+            line-height: 1;
+        }
+
+        .base-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .base-container span {
+            font-family: 'MickeyFont', sans-serif;
+            font-size: 1.5rem;
+            color: #0052FF;
+        }
+
+        .base-logo {
+            height: 1.2rem;
+            width: auto;
+        }
+
+        .description {
+            font-family: 'MickeyFont', sans-serif;
+            font-size: 1.4rem;
+            color: #333;
+            max-width: 800px;
+            text-align: center;
+            margin: 2rem 0;
+            line-height: 1.4;
+        }
+
+        /* Mickey logo styles */
+        .mickey-logo {
+            width: 700px;
+            margin: 1rem 0;
+            animation: spin 20s linear infinite;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mickey-logo:hover {
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.2));
+            transform: scale(1.05) rotate(10deg);
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Stats styles */
+        .stats {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 150px;
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .stat-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-gif {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 1rem;
+            position: relative;
+            top: -200px;
+        }
+
+        .stat-image {
+            width: 200px;
+            height: 200px;
+            animation: spin 20s linear infinite;
+            position: relative;
+        }
+
+        .stat-overlay {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000000;
+            font-size: 1.6rem;
+            font-weight: 900;
+            font-family: 'Arial Black', sans-serif;
+            z-index: 3;
+            width: 100%;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+        }
+
+        /* Contract address styles */
+        .contract {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.2rem;
+            color: #000000;
+            font-weight: 900;
+            margin: 1rem 0 2rem 0;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        /* Button styles */
+        .buttons {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .button-image {
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button-image:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+
+        /* About section styles */
+        .about-section {
+            height: 100vh;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-left: 0;
+        }
+
+        .about-icon {
+            width: 80px;
+            height: 80px;
+            animation: slowSpin 10s linear infinite;
+        }
+
+        @keyframes slowSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .about-title {
+            font-family: 'MickeyFont', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        .text-container {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .about-text {
+            font-family: 'MickeyFont', sans-serif;
+            font-size: 1.8rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .white-paper-btn {
+            background: #000;
+            color: #fff;
+            font-family: 'MickeyFont', sans-serif;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .white-paper-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .about-image {
+            width: 450px;
+            height: auto;
+            object-fit: contain;
+            margin-left: 2rem;
+        }
+
+        /* How to Buy section styles */
+        #how-to-buy {
+            height: 50vh; /* Reduced from 70vh */
+            margin-bottom: -50px; /
+        }
+
+        .buy-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 0rem;
+        }
+
+        .buy-title {
+            font-family: 'MickeyFont', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #0052FF;
+        }
+        .buy-title span {
+    color: #0052FF;
+      }
+
+      .mickey-text {
+    font-family: 'MickeyFont', sans-serif; /* Explicitly set the font for $MICKEY */
+    color: #0052FF;
+}
+
+        .buy-steps {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .buy-step-img {
+            width: 300px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .tokenomics-title {
+    font-family: 'MickeyFont', sans-serif;
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 2rem;
+}
+
+        .buy-step-img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Collection section styles */
+        #collection {
+    height: 100vh;
+    padding-top: 0;
+    margin-bottom: -100px; /* Added negative margin to reduce space */
+}
+
+        .collection-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 0rem;
+        }
+
+        .collection-title {
+            font-family: 'MickeyFont', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: #000;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .collection-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .collection-img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Tokenomics section styles */
+/* Tokenomics section styles */
+#tokenomics {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 0; /* Reduced from 4rem to 0 */
+    margin-top: -50px; /* Added negative margin to pull it up */
+}
+
+
+        .tokenomics-container {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .tokenomics-img {
+            width: 1200px;
+            height: auto;
+            transform-origin: top center;
+            transition: transform 0.5s ease;
+            animation: gentle-swing 2s ease-in-out infinite;
+            animation-play-state: paused;
+        }
+
+        .tokenomics-img:hover {
+            animation-play-state: running;
+        }
+
+        @keyframes gentle-swing {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(3deg);
+            }
+            75% {
+                transform: rotate(-3deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        .fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Active nav link style */
+.nav a.active {
+    background: #333;
+    color: white;
+}
+
+/* Reveal animation */
+.collection-img, .buy-step-img, .about-image {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loading animation */
+body:not(.loaded) {
+    overflow: hidden;
+}
+
+.loaded .content {
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+         /* Enhanced Mobile Optimizations */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav {
+        position: fixed;
+        background: rgba(245, 245, 245, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+        padding: 0.8rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav a {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+        min-width: 100px;
+        text-align: center;
+        background: rgba(255,255,255,0.5);
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .content {
+        padding: 85px 15px 20px 15px;
+    }
+
+    .title-container {
+        padding: 0 10px;
+    }
+
+    .title-container h1 {
+        font-size: 2.8rem;
+    }
+
+    .larp-logo {
+        width: 80%;
+        max-width: 250px;
+    }
+
+    .mickey-logo {
+        width: 90%;
+        max-width: 450px;
+        margin: 1.5rem 0;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        padding: 0 15px;
+        margin: 1.5rem 0;
+    }
+
+    .stats {
+        position: relative;
+        top: 0;
+        transform: none;
+        margin: 2rem 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        padding: 0 15px;
+    }
+
+    .stat-container {
+        transform: scale(0.9);
+    }
+
+    .contract {
+        font-size: 0.9rem;
+        padding: 10px;
+        word-break: break-all;
+        background: rgba(255,255,255,0.8);
+        border-radius: 8px;
+        margin: 1rem 15px;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 15px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .button-image {
+        width: 100%;
+        max-width: 160px;
+        margin: 0 auto;
+    }
+
+    /* About Section Mobile */
+    .about-section {
+        padding: 3rem 1rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .about-text {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 90%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    /* How to Buy Section Mobile */
+    .buy-steps {
+        gap: 1.5rem;
+    }
+
+    .buy-step-img {
+        width: 90%;
+        max-width: 280px;
+    }
+
+    /* Collection Section Mobile */
+    .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 15px;
+    }
+
+    .collection-img {
+        border-radius: 8px;
+    }
+
+    /* Tokenomics Section Mobile */
+    .tokenomics-container {
+        padding: 0 15px;
+    }
+
+    .tokenomics-img {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        padding: 0.6rem;
+        gap: 0.5rem;
+    }
+
+    .nav a {
+        font-size: 0.8rem;
+        padding: 0.6rem 0.8rem;
+        min-width: 80px;
+    }
+
+    .title-container h1 {
+        font-size: 2.3rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .stat-container {
+        transform: scale(0.8);
+    }
+
+    .buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .button-image {
+        max-width: 200px;
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .collection-img {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* Improve touch targets */
+    .nav a,
+    .button-image,
+    .white-paper-btn {
+        min-height: 44px;
+    }
+
+    /* Prevent text scaling */
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+/* Additional optimization for larger phones */
+@media (min-width: 481px) and (max-width: 768px) {
+    .buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Optimization for landscape mode */
+@media (max-height: 600px) and (orientation: landscape) {
+    .nav {
+        padding: 0.4rem;
+    }
+
+    .content {
+        padding-top: 70px;
+    }
+
+    .mickey-logo {
+        max-width: 350px;
+    }
+
+    .stats {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .stat-container {
+        transform: scale(0.7);
+    }
+}
+        /* Responsive styles */
+        
+    </style>
 </head>
 <body>
-    <div class="page-wrapper">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-links">
-                    <a href="#section1" class="nav-link">
-                        <span class="nav-text">ABOUT</span>
-                        <span class="nav-line"></span>
-                    </a>
-                    <a href="#section2" class="nav-link">
-                        <span class="nav-text">TOKENOMICS </span>
-                        <span class="nav-line"></span>
-                    </a>
-                    <a href="whitepaper.pdf" class="nav-link" target="_blank">
-                        <span class="nav-text">WHITEPAPER</span>
-                        <span class="nav-line"></span>
-                    </a>
-                </div>
-            </div>
+    <audio id="themeMusic" loop>
+        <source src="your-music-file.mp3" type="audio/mp3">
+    </audio>
+    <section class="hero">
+        <!-- Navigation -->
+        <nav class="nav">
+            <img src="mickey1.jpg" alt="Theme Toggle" class="theme-toggle">
+            <a href="#about">ABOUT</a>
+            <a href="#tokenomics">TOKENOMICS</a>
+            <a href="https://t.me/ogmickeyonbase" target="_blank">TELEGRAM</a>
+            <a href="https://x.com/OGMickeyBase" target="_blank">TWITTER</a>
         </nav>
 
-        <section id="home" class="hero" style="background-image: url('bob1.gif');">
-            <div class="hero-content">
-                <img src="bob1-left.gif" class="hero-gif left-gif" alt="Left Gif">
-                <div class="hero-text">
-                    <h1 class="main-title">MICKEY<br>ON BASE</h1>
-                    <p class="subtitle">The greatest animated character of all time, now live on Base</p>
+        <!-- Main Content -->
+        <div class="content">
+            <div class="title-container">
+                <img src="larp.png" alt="LARP & FRIENDS PRESENTS" class="larp-logo">
+                <h1>OG $MICKEY</h1>
+                <div class="base-container">
+                    <span>ON BASE</span>
+                    <img src="base-logo.jpg" alt="Base Logo" class="base-logo">
                 </div>
-                <div class="custom-buttons">
-                    <a href="https://t.me/+hevWuFI0JplmNDc0" target="_blank" class="custom-btn">
-                        <img src="button1.jpg" alt="Telegram">
-                    </a>
-                    <a href="https://x.com/OGMickeyBase" target="_blank" class="custom-btn">
-                        <img src="button2.jpg" alt="Twitter">
-                    </a>
-                    <a href="https://dexscreener.com/base/0xbb261929f33b69c201c8855bafdc341e1f0dda23" target="_blank" class="custom-btn">
-                        <img src="button3.jpg" alt="Dextools">
-                    </a>
-                </div>
-                <img src="bob1-right.gif" class="hero-gif right-gif" alt="Right Gif">
-                <img src="bob1lowleft.gif" class="hero-gif bottom-left-gif" alt="Bottom Left Gif">
-                <img src="bob1-bottom-right.gif" class="hero-gif bottom-right-gif" alt="Bottom Right Gif">
             </div>
-        </section>
+            
+            <img src="mickey-wheel.png" alt="Mickey Mouse Wheel" class="mickey-logo">
+            
+            <p class="description">Bringing THE Steamboat Willie version of Mickey public IP to Base</p>
 
-        <section id="section1" class="section-light" style="background-image: url('bob2.jpg');">
-            <div class="section-content">
-                <div class="section-frame">
-                    <div class="frame-content">
-                        <h2 class="section-title">About</h2>
-                    </div>
+            <div class="stats">
+                <div class="stat-container">
+                    <img src="gif1.gif" alt="Gif 1" class="stat-gif">
+                    <img src="ok1.jpg" alt="Supply Burned" class="stat-image">
+                    <div class="stat-overlay">24%</div>
                 </div>
-                <div class="section-frame content-frame">
-                    <div class="frame-content">
-                        <div class="about-text">
-                            <p>1/Intro</p>
-                            <p>Characters like Mickey Mouse have become iconic symbols of entertainment and nostalgia. As these characters enter the public domain, there is an opportunity to preserve their legacy through blockchain technology. $mickey on Base is a memecoin (unaffiliated with Disney) that embodies this vision by placing these characters on the blockchain, allowing for new forms of immutable interaction and engagement.</p>
-                            <p>2/Vision</p>
-                            <p>The vision of $mickey is to create a decentralized platform where public domain and beloved legacy characters can be celebrated and shared. By leveraging blockchain technology, we aim to create a community-driven ecosystem that fosters creativity, collaboration, and innovation.</p>
-                        </div>
-                    </div>
+                <div class="stat-container">
+                    <img src="gif2.gif" alt="Gif 2" class="stat-gif">
+                    <img src="ok2.jpg" alt="Circulating Supply" class="stat-image">
+                    <div class="stat-overlay">756M</div>
                 </div>
             </div>
-        </section>
 
-        <section id="section2" class="section-dark" style="background-image: url('bob3.jpg');">
-            <div class="section-content">
-                <div class="section-frame">
-                    <div class="frame-content">
-                        <h2 class="section-title">Idea</h2>
-                    </div>
-                </div>
-                <div class="section-frame content-frame">
-                    <div class="frame-content">
-                        <div class="tokenomics-text">
-                            <p>As blockchain technology evolves, it opens up new possibilities for how we engage with and preserve cultural heritage. $mickey on Base ($mickey) is a memecoin that aims to bring beloved legacy characters and public domain figures onchain, making them accessible and interactive in the digital age. This white paper outlines the vision, tokenomics, and community initiatives for $mickey, designed to celebrate and immortalize characters that have shaped our cultural landscape.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="disclaimer-text">
-                        <p class="ca">CA</p>
-                        <p class="address">0x1687349bC6cF09D6ba53A649c1EC25759de6fE81</p>
-                </div>
+            <p class="contract">CA: 0x1687349bc6cf09d6ba53a649c1ec25759de6fe81</p>
+
+            <div class="buttons">
+                <a href="https://app.uniswap.org/" target="_blank">
+                    <img src="ko1.jpg" alt="Button 1" class="button-image">
+                </a>
+                <a href="https://www.dextools.io/app/en/base/pair-explorer/0xbb261929f33b69c201c8855bafdc341e1f0dda23?t=1733273890929" target="_blank">
+                    <img src="ko2.jpg" alt="Button 2" class="button-image">
+                </a>
+                <a href="https://dexscreener.com/base/0xbb261929f33b69c201c8855bafdc341e1f0dda23" target="_blank">
+                    <img src="ko3.jpg" alt="Button 3" class="button-image">
+                </a>
+                <a href="https://coinmarketcap.com/currencies/og-mickey/" target="_blank">
+                    <img src="ko4.jpg" alt="Button 4" class="button-image">
+                </a>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-header">
+            <img src="about1.png" alt="About Icon" class="about-icon">
+            <h2 class="about-title">About</h2>
+        </div>
+        
+        <div class="about-content">
+            <div class="text-container">
+                <p class="about-text">
+                    $MICKEY IS A UNIQUE MEME COIN INSPIRED BY THE ICONIC MICKEY MOUSE, THE BELOVED CHARACTER WHO MADE HIS DEBUT IN THE CLASSIC 1928 ANIMATED SHORT FILM.
+                    <br><br>
+                    LAUNCHED AS A TRIBUTE TO THIS PIONEERING FIGURE IN ANIMATION $MICKEY CAPTURES THE NOSTALGIC CHARM AND TIMELESS APPEAL OF DISNEY'S MOST FAMOUS CHARACTER.
+                </p>
+                <button class="white-paper-btn">VIEW WHITE PAPER</button>
+            </div>
+            <img src="ok5.webp" alt="Mickey" class="about-image">
+        </div>
+    </section>
+
+    <!-- How to Buy Section -->
+    <section id="how-to-buy">
+        <div class="buy-container">
+            <h2 class="buy-title">HOW TO BUY <span class="mickey-text">$MICKEY</span></h2>
+            <div class="buy-steps">
+                <img src="buy1.png" alt="Switch ETH to Base Network" class="buy-step-img">
+                <img src="buy2.png" alt="Open Uniswap & Paste Contract" class="buy-step-img">
+                <img src="buy3.png" alt="Swap ETH to $MICKEY" class="buy-step-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection">
+        <div class="collection-container">
+            <h2 class="collection-title">COLLECTION OF ART PIECES</h2>
+            <div class="collection-grid">
+                <img src="coll1.png" alt="Collection 1" class="collection-img">
+                <img src="coll2.png" alt="Collection 2" class="collection-img">
+                <img src="coll3.png" alt="Collection 3" class="collection-img">
+                <img src="coll4.png" alt="Collection 4" class="collection-img">
+                <img src="coll5.png" alt="Collection 5" class="collection-img">
+                <img src="coll6.png" alt="Collection 6" class="collection-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics">
+        <div class="tokenomics-container">
+            <h2 class="tokenomics-title">TOKENOMICS</h2>
+            <img src="tokenomics.png" alt="Tokenomics of $MICKEY" class="tokenomics-img">
+        </div>
+    </section>
 
     <script>
+        // All your website enhancements
         document.addEventListener('DOMContentLoaded', function() {
-            document.body.addEventListener('touchmove', function(e) {
-                if (e.target === document.body) {
+            // Theme toggle and music functionality
+            const themeToggle = document.querySelector('.theme-toggle');
+            const themeMusic = document.getElementById('themeMusic');
+            let isMusicPlaying = false;
+    
+            themeToggle.addEventListener('click', function() {
+                document.querySelector('.hero').classList.toggle('active');
+                
+                if (!isMusicPlaying) {
+                    themeMusic.play();
+                    isMusicPlaying = true;
+                } else {
+                    themeMusic.pause();
+                    isMusicPlaying = false;
+                }
+            });
+    
+            // Smooth scroll with offset for fixed header
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    const headerOffset = 70;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+    
+            // Copy contract address with feedback
+            const contractElement = document.querySelector('.contract');
+            if (contractElement) {
+                contractElement.addEventListener('click', async function() {
+                    const text = this.textContent.replace('CA: ', '');
+                    try {
+                        await navigator.clipboard.writeText(text);
+                        
+                        // Visual feedback
+                        this.style.backgroundColor = '#4CAF50';
+                        this.textContent = 'Copied!';
+                        
+                        setTimeout(() => {
+                            this.style.backgroundColor = '';
+                            this.textContent = 'CA: ' + text;
+                        }, 1500);
+                    } catch (err) {
+                        console.error('Failed to copy:', err);
+                    }
+                });
+            }
+    
+            // Lazy loading for images
+            const images = document.querySelectorAll('img');
+            const imageOptions = {
+                threshold: 0.1,
+                rootMargin: '50px'
+            };
+    
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.add('fade-in');
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            }, imageOptions);
+    
+            images.forEach(img => {
+                if (img.src) {
+                    img.dataset.src = img.src;
+                    img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // Tiny placeholder
+                    imageObserver.observe(img);
+                }
+            });
+    
+            // Smooth reveal animations on scroll
+            const revealElements = document.querySelectorAll('.collection-img, .buy-step-img, .about-image');
+            const revealOptions = {
+                threshold: 0.1,
+                rootMargin: '20px'
+            };
+    
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+    
+            revealElements.forEach(el => revealObserver.observe(el));
+    
+            // Active section highlight in navigation
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+    
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+    
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+    
+            // Prevent zoom on double tap (mobile)
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', (e) => {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) {
                     e.preventDefault();
                 }
-            }, { passive: false });
+                lastTouchEnd = now;
+            }, false);
+    
+            // Add loading animation
+            window.addEventListener('load', () => {
+                document.body.classList.add('loaded');
+            });
         });
     </script>
 </body>
